@@ -1,0 +1,15 @@
+建立虛擬環境
+
+終端機-  cd C:\Users\user\Documents\pythonEnv
+python -m venv venv資料夾
+
+
+
+requirments.txt
+
+pip freeze > requirments.txt
+
+
+
+git config --global user.email "iamsan0816@gmail.com"
+git config --global user.name "iamsan0816"
