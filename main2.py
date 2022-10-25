@@ -7,6 +7,14 @@ from PIL import Image, ImageTk
 import tkinter.font as tkFont
 
 
+class ImageButton(tk.Button):
+    def __init__(self, parents, **kwargs):
+        super().__init__(parents, **kwargs)
+        bgImage1 = Image.open('btn1.png')
+        self.tkImage1 = ImageTk.PhotoImage(bgImage1)
+        self.config(image=self.tkImage1, borderwidth=0)
+
+
 class Window(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -39,16 +47,18 @@ class Window(tk.Tk):
         # -------end ButtonsFrame------
 
         # -------建立 Buttons------
-        bgImage1 = Image.open('btn1.png')
-        self.tkImage1 = ImageTk.PhotoImage(bgImage1)
-        btn1 = tk.Button(buttonFrame, image=self.tkImage1)
-        btn1.pack()  # pack會影響tk.Frame的寬高
+        #bgImage1 = Image.open('btn1.png')
+        #self.tkImage1 = ImageTk.PhotoImage(bgImage1)
+        btn1 = ImageButton(buttonFrame, command=self.btn1Click)
+        btn1.pack()
 
-        bgImage2 = Image.open('btn1.png')
-        self.tkImage2 = ImageTk.PhotoImage(bgImage2)
-        btn2 = tk.Button(buttonFrame, image=self.tkImage2, borderwidth=0)
+        btn2 = ImageButton(buttonFrame, command=self.btn1Click)
         btn2.pack()
+
         # -------end Buttons------
+
+    def btn1Click(self):
+        print('UserClick')
 
 
 def main():
