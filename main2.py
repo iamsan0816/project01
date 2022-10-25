@@ -30,8 +30,25 @@ class Window(tk.Tk):
         helv36 = tkFont.Font(family='Helvetica', size=24, weight='bold')
         tk.Label(mainCanvas, text="職能發展學院", font=helv36,
                  background='#f3790c', foreground="#ffffff").place(x=32, y=43)
-
         # -------end lable------
+
+        # -------建立 ButtonsFrame------
+        buttonFrame = tk.Frame(mainCanvas, width=275,
+                               height=42, background='#000000')
+        buttonFrame.place(x=390, y=290)
+        # -------end ButtonsFrame------
+
+        # -------建立 Buttons------
+        bgImage1 = Image.open('btn1.png')
+        self.tkImage1 = ImageTk.PhotoImage(bgImage1)
+        btn1 = tk.Button(buttonFrame, image=self.tkImage1)
+        btn1.pack()  # pack會影響tk.Frame的寬高
+
+        bgImage2 = Image.open('btn1.png')
+        self.tkImage2 = ImageTk.PhotoImage(bgImage2)
+        btn2 = tk.Button(buttonFrame, image=self.tkImage2, borderwidth=0)
+        btn2.pack()
+        # -------end Buttons------
 
 
 def main():
