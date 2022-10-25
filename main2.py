@@ -17,7 +17,7 @@ class Window(tk.Tk):
         btnbgimage = Image.open('button.jpg').resize(
             (200, 200), Image.ANTIALIAS)  # resize設定大小
         self.tkbtnbgImage = ImageTk.PhotoImage(btnbgimage)
-        btn = tk.Button(mainCanvas, text="click",
+        btn = tk.Button(mainCanvas, text="",
                         image=self.tkbtnbgImage, compound=tk.LEFT,).pack()
 
 
